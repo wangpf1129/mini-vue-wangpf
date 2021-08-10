@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mini_Vue</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="renderer.js"></script>
+<script>
+  // 1.通过 h 函数创建一个 vnode
+  const vnode = h('div', { class: 'wangpf', id: 'aaa' }, [
+    h('h2', { class: 'title' }, 'hello,I am wangpf'),
+    h('div', null, '当前计数：100'),
+    h('button', { class: 'btn' }, '+1')
+  ])
+  
+  // 2. 通过 mount 函数， 将 vnode 挂载在div#app上
+  mount(vnode, document.querySelector('#app'))
+  
+  // 3. 创建新的 vnode
+  setTimeout(() => {
+    const newVnode = h('div', { class: 'pf', id: 'aaa' }, [
+      h('h2', { class: 'title' }, 'hello,I am wangpf'),
+      h('div', null, '当前计数：0'),
+      h('button', { class: 'btn222' }, '-1')
+    ])
+    patch(vnode, newVnode)
+  }, 2000)
+  
+  
+</script>
+</body>
+</html>
