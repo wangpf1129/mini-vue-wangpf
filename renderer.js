@@ -72,12 +72,12 @@ const patch = (n1, n2) => {
     // 2.2 删除旧的props
     for (const key in oldProps) {
       if (!newProps.hasOwnProperty(key)) {return}
+      if (key.startsWith('on')) {
+        const value = oldProps[key]
+        el.removeEventListener(key.slice(2).toLowerCase(), value)
+      }
       if (!(key in newProps)) {
-        if (key.startsWith('on')) {
-          el.removeEventListener(key.slice(2).toLowerCase())
-        } else {
-          el.removeAttribute(key)
-        }
+        el.removeAttribute(key)
       }
     }
 
@@ -122,5 +122,4 @@ const patch = (n1, n2) => {
     }
   }
 }
-
 
