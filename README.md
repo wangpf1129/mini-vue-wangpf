@@ -159,7 +159,7 @@ const mount = (vnode, container) => {
 </body>
 ```
 
-![test](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210808213720493.png)
+![test](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8566def27dbf48908cf54d3acc0773c9~tplv-k3u1fbpfcp-watermark.image)
 
 ### patch 函数
 
