@@ -8,13 +8,7 @@ Vue源码包含三大核心：
 2. Runtime模块： 也可以称为Renderer模块，真正渲染的模块
 3. Reactivity模块： 响应式系统
 
-![image-20210808212611588](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210808212611588.png)
-
-### 三大系统协同合作
-
-![image-20210808212647410](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210808212647410.png)
-
-
+![三大模块系统.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/142c2d19851a4e9aa327bfd3d7d8978d~tplv-k3u1fbpfcp-watermark.image)
 
 
 
@@ -43,13 +37,7 @@ Vue源码包含三大核心：
     2. 可以使用js来表达非常多的逻辑，而对于DOM本身来说是非常不方便的
 2. 其次是方便实现跨平台，包括你可以将VNode节点渲染成任意你想要的节点
     1.  比如渲染在WebGL，SSR，Native（ios，Android）上等等
-    2. 并且Vue允许你开发属于自己的渲染器（renderer），在其他的平台上渲染
-
-#### 虚拟DOM的渲染过程
-
-![image-20210808212204686](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210808212204686.png)
-
-
+    2.  并且Vue允许你开发属于自己的渲染器（renderer），在其他的平台上渲染
 
 
 
@@ -60,7 +48,7 @@ Vue源码包含三大核心：
 1.  **h 函数：**用于返回一个VNode对象
 
 2.  **mount函数：** 用于将VNode挂载在DOM上
-3. **patch函数：** 用于俩个VNode进行对比，判断如何处理新的VNode
+3.  **patch函数：** 用于俩个VNode进行对比，判断如何处理新的VNode
 
 
 
@@ -171,7 +159,7 @@ const mount = (vnode, container) => {
 </body>
 ```
 
-![image-20210808213720493](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210808213720493.png)
+![test](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210808213720493.png)
 
 ### patch 函数
 
@@ -546,7 +534,6 @@ const reactive = (raw) => {
 实现效果：
 
 ```js
-
 const info = reactive({ counter: 100 })
 
 watchEffect(() => {
@@ -646,7 +633,7 @@ const createApp = (rootComponent) => {
   createApp(App).mount('#app')
 ```
 
-![image-20210812204515521](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210812204515521.png)
+![test1](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/21be39e02a714a96b2f4841610cc8b71~tplv-k3u1fbpfcp-watermark.image)
 
 点击即可完成加一操作！
 
